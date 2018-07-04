@@ -1,18 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=uft-8"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=uft-8>
 <title>Login Index</title>
 </head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <body>
 	<a>this is login page</a>
 	<button onclick="login()" >login</button>
 
 </body>
 <script>
- 	var url = "SpringMvc/mvc/login.index?name=allen+password=allen"
+ 	var url = "/SpringMvc/mvc/login.index?name=allen&password=allen"
 	function login(){
  		var xmlHttp = null;
  		xmlHttp = new XMLHttpRequest();
