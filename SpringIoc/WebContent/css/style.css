@@ -1,0 +1,25 @@
+.areaDiv{
+	border:1px gray solid;width :820px;height: 330px;padding:8px
+ }
+ .buttonarea{
+ 	border:1px gray solid;width :800px;height: 80px;padding:8px
+ }
+ .textarea{
+    border:1px gray solid;width:800px;height:300px;padding:8px
+ }
+#send{
+ 	position:relative;
+ 	left:-10px;
+ 	top:5px;
+ }
+ #reset{
+ 	position:relative;
+ 	left:150px;
+ 	top:5px;
+ }
+ #lang{
+ 	position:relative;
+ 	right:150px;
+ 	top:5px;
+ }
+ 

@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>Insert title here</title>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#send").click(function(){
+		//alert("Text: " + $("#input").text());
+		var data = $("#input").text();
+		var language = $("#lang").val();
+		alert(data);
+		ajaxSend(data,language);
+  	});
+	$("#reset").click(function(){
+		$("#output").val("");
+		$("#input").val("");
+	});
+});
+
+	function ajaxSend(data,language){
+		$.ajax({
+			url:"translate.form",
+			type:"POST",
+			data:{
+				input:data,
+				lang:language
+			},
+			async: true,
+			success: function(data) {
+				$("#output").val(data);
+			},
+			error: function() {}
+		});
+	}
+</script>
+</head>
+<style>
+	div{
+	text-align: center;
+	}
+	 button{
+   	width: 100p;height: 50px;text-align: center;
+	 }
+</style>
+<script type="text/javascript">
+	
+</script>
+
+<body>
+	<div>
+		<div class="areaDiv">
+			<textarea class="textarea" id="input"></textarea>
+		</div>
+	<div class="buttonarea">
+	    <select id="lang">
+	    	<option value="ccc">ccc</option>
+	    	<option value="zh-CN">zh-CN</option>
+	    	<option value="zh-TW">zh-TW</option>
+	    </select>
+		<button id="send">send</button>
+		<button onclick="reset()" id="reset">reset</button>
+	</div>
+	<div class="areaDiv">
+		<textarea class="textarea" id="output"></textarea>
+	</div>
+	</div>
+</body>
+</html>

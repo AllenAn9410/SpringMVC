@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=uft-8"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=uft-8>
+<title>Login Index</title>
+</head>
+<body>
+	<a>this is login page</a>
+	<button onclick="login()" >login</button>
+
+</body>
+<script>
+	function login(){
+		
+	}
+	
+</script>
+</html>

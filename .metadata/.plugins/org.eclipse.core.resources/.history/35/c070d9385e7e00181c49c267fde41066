@@ -1,0 +1,37 @@
+package allen.controller;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServlet;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import allen.service.TranslateCCCcode;
+
+@Controller
+@RequestMapping("/allen")
+public class TranslateController  {
+	@Resource(name="translateCCCcode")
+	private TranslateCCCcode tc;
+	public void setTranslateCCCcode(TranslateCCCcode tc){
+		this.tc = tc;
+	}
+	public TranslateCCCcode getTranslateCCCcode(){
+		return tc;
+	}
+	 @RequestMapping("/translate.form")
+	 @ResponseBody 
+	public String translate(String input,String lang){
+		//System.out.println("translate");
+		 System.out.println(input);
+		 if(tc.isEmpty(input)){
+			 return "ajax success and get message is empty";
+		 }
+		String inputType = tc.judgeInputType(input);
+		String [] msgArr = tc.splitMsg(input, inputType);
+		String back = tc.seekSource(msgArr, inputType, lang);
+		return back;
+	}
+
+}

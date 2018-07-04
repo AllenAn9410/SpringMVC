@@ -1,0 +1,3 @@
+#Tue Jul 03 11:38:52 CST 2018
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="jsonObject"/>\r\n<expression enabled\="true" text\="backMsg"/>\r\n<expression enabled\="true" text\="back"/>\r\n<expression enabled\="true" text\="tempMsg"/>\r\n</watchExpressions>\r\n
+eclipse.preferences.version=1
