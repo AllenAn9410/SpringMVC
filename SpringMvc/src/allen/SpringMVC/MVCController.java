@@ -1,5 +1,7 @@
 package allen.SpringMVC;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.crypto.Data;
 
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/mvc")
 public class MVCController {
+	
+	private final AtomicLong counter = new AtomicLong();
+	
 	@RequestMapping("/hello")
 	public String hello(){
 		System.out.println("hello");
@@ -34,5 +39,12 @@ public class MVCController {
 		}
 		System.out.println("check pass");
 		return "loginSuccess";
+	}
+	
+	@RequestMapping("/json")
+	public UserInfo uInfo(@RequestParam("name")String name) {
+		System.out.println(" in json ");
+		return new UserInfo(counter.incrementAndGet(),
+				name);
 	}
 }
