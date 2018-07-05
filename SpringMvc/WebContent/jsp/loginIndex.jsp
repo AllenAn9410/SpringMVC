@@ -6,19 +6,11 @@
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <body>
-	<a>this is login page</a>
-	<button onclick="login()" >login</button>
-
+	<form method="post" action="login.index">
+       <p>user:<input type="text" name ="name"/></p>
+       <p>password:<input type="password" name="password"/></p>
+       <input type="submit" value="login"/>
+       <h6>${err_msg}</h6>
+    </form>
 </body>
-<script>
- 	var url = "/SpringMvc/mvc/login.index?name=allen&password=allen"
-	function login(){
- 		var xmlHttp = null;
- 		xmlHttp = new XMLHttpRequest();
- 	    xmlHttp.open( "GET", url, false );
- 	    xmlHttp.send( null );
- 	    return xmlHttp.responseText;
-	}
-	
-</script>
 </html>

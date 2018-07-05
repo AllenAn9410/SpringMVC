@@ -1,6 +1,7 @@
 package allen.SpringMVC;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.crypto.Data;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,7 @@ public class MVCController {
 			HttpServletRequest req) {
 		System.out.println("login check name="+ name + ", password = "+ password);
 		if ( Tool.isEmpty(name) || Tool.isEmpty(password)) {
-			Exception e = new Exception("info is not correct");
+			MVCException e = new MVCException("info is not correct");
 		    req.getSession().setAttribute("err_msg",e.getMessage());
 			return "loginIndex";
 		}
